@@ -4,32 +4,68 @@ function randomNum() {
 }
 
 // computers choice
-function computerSelection() {
+function getComputerChoice() {
+
    if (randomNum() === 2) {
-    return "Rock";
+    return "rock";
    }
    else if(randomNum() === 0) {
-    return "Paper";
+    return "paper";
    }
 
    else {
-    return "Scissors";
+    return "scissors";
    } 
 }
 
-console.log(computerSelection());
+// gets user input for rock paper scissors
+function getPlayerChoice() {
 
-function playerSelection() {
     let correctInput = "invalid entry, please type Rock Paper or Scissors";
-    let userInput = prompt("enter rock paper or scissors here").toLowerCase();
+    let userInput = prompt("enter rock paper or scissors here:").toLowerCase();
+
     if (userInput === "rock" || "paper" || "scissors") {
-        return userInput.charAt(0).toUpperCase() + userInput.slice(1);
+        return userInput;
+    }
+    else {  // error message
+        return correctInput;
+    }
+}
+const playerSelection = getPlayerChoice();
+const computerSelection = getComputerChoice();
+
+// simulate a round played
+function playRound(playerSelection, computerSelection) {
+
+     if (playerSelection === computerSelection) {
+         return `Tie game, you both chose ${playerSelection}`;
+     }
+
+     else if (playerSelection == "paper" && computerSelection == "rock") {
+        return "you won, you chose paper and the computer chose rock";
+    }
+
+    else if (playerSelection == "rock" && computerSelection == "scissors") {
+        return "you won, you chose rock and the computer chose scissors";
+    }
+
+    else if (playerSelection == "scissors" && computerSelection == "paper") {
+        return "you won, you chose paper and the computer chose rock";
     }
 
     else {
-        return correctInput
+        return `you lost, you chose ${playerSelection} and the computer chose ${computerSelection} `;
     }
 }
 
-console.log(playerSelection());
+let round = playRound(playerSelection, computerSelection);
+console.log(round);
+
+
+
+
+
+
+
+
 
