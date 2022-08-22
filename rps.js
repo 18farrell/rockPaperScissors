@@ -18,3 +18,9 @@ function computerSelection() {
 }
 
 console.log(computerSelection());
+
+function playerSelection() {
+    let userInput = prompt("enter rock paper or scissors here").toLowerCase();
+    return userInput;
+}
+console.log(playerSelection());
