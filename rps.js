@@ -20,7 +20,16 @@ function computerSelection() {
 console.log(computerSelection());
 
 function playerSelection() {
+    let correctInput = "invalid entry, please type Rock Paper or Scissors";
     let userInput = prompt("enter rock paper or scissors here").toLowerCase();
-    return userInput;
+    if (userInput === "rock" || "paper" || "scissors") {
+        return userInput.charAt(0).toUpperCase() + userInput.slice(1);
+    }
+
+    else {
+        return correctInput
+    }
 }
+
 console.log(playerSelection());
+
