@@ -22,26 +22,32 @@ function getComputerChoice() {
 function getPlayerChoice() {
 
     let correctInput = "invalid entry, please type Rock Paper or Scissors";
-    let userInput = prompt("enter rock paper or scissors here:").toLowerCase();
-
-    if (userInput === "rock" || "paper" || "scissors") {
-        return userInput;
+    let userInput = prompt("enter rock, paper, or scissors here:");
+    
+    if 
+    (userInput === "rock" || 
+     userInput === "paper" || 
+     userInput === "scissors") {
+      return userInput.toLowerCase();
     }
-    else {  // error message
-        return correctInput;
-    }
+    else {
+      console.log(correctInput);
+      exit();
+    }  
 }
+ 
 const playerSelection = getPlayerChoice();
 const computerSelection = getComputerChoice();
 
 // simulate a round played
 function playRound(playerSelection, computerSelection) {
 
-     if (playerSelection === computerSelection) {
-         return `Tie game, you both chose ${playerSelection}`;
-     }
+    
+    if (playerSelection === computerSelection) {
+        return `Tie game, you both chose ${playerSelection}`;
+    }
 
-     else if (playerSelection == "paper" && computerSelection == "rock") {
+    else if (playerSelection == "paper" && computerSelection == "rock") {
         return "you won, you chose paper and the computer chose rock";
     }
 
